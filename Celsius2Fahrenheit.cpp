@@ -1,18 +1,32 @@
 #include <iostream>
-#include <cctype>
+#include <ctype.h>
+#include <vector>
 using namespace std;
 
 int main()
 {
-    float celcius = 0;
-    float faranheit = 0;
-    char cf = "";
-
-    while (cf=="")
+    float celciusL=0,celciusH=0, faranheitL=0,faranheitH=0;
+    string cf = "_";
+    while (cf == "_")
     {
-        cout << "celcius or faranheit [C/F]: \n";
-        cin >> tolower(cf);
-        if (cf != "c" || cf != "f")
+        cout << "celcius or faranheit [C/F]: ";
+        cin >> cf;
+        cout<<celciusL;
+        if (cf == "c" || cf == "C")
+        {
+            cout << "\nenter the lowest temp and the highest temp\n";
+            cout << "celcius[low]: ";
+            cin >> celciusL;
+            cout << "celcius[high]: ";
+            cin >> celciusH;
+            cout << celciusH << celciusL;
+        }
+        else if (cf == "f" || cf =="F")
+        {
+            cout << "faranheit[low]: ";
+            cin >> faranheitL;
+        }
+        else
         {
             cout << "invalid input, try again";
         }
