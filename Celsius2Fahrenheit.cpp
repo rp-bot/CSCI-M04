@@ -1,12 +1,13 @@
 #include <iostream>
 #include <ctype.h>
 #include <stdlib.h>
-#include <vector>
+#include <cmath>
+#include <iomanip>
 using namespace std;
 
 int main()
 {
-    float celciusL=0,celciusH=0, faranheitL=0,faranheitH=0;
+    float celciusL=0,celciusH=0, faranheitL=0,faranheitH=0, temp=0,faranheit=100;
     string cf = "_";
     bool trigger = true;
     while (cf == "_")
@@ -30,12 +31,39 @@ int main()
                 }
                 else
                 {
-                    trigger = false;
-                    cf = "_";
+                    if (celciusL > celciusH)
+                    {
+                        temp = celciusH;
+                        celciusH = celciusL;
+                        celciusL = temp;
+                    }
+                    if ((celciusH - celciusL) >= 20)
+                    {
+                        cout << "\nThe LOW to HIGH temp range was too wide\n"
+                             <<"\nTry again, range can only be within 20 deg\n";
+                        cf = "c";
+                        continue;
+                    }
                     cout << "\n________________________________";
-                    cout << "\ncelcius ______________ faranheit";
-                    for (; i < 5; i++)
+                    cout << "\ncelcius  _____________ faranheit\n";
+                    faranheit = (celciusL*9/5) + 32;
+                    cout << endl<<setw(7)<<fixed<<setprecision(2)
+                         << celciusL << "  _____________ ";
+                    cout << setw(9)<<fixed<<setprecision(2)<<faranheit
+                         << endl;
 
+                    for (float i = floor(celciusL)+1; i < celciusH; i++)
+                    {
+                        cout << setw(7)<<fixed<<setprecision(2)
+                             << i<<" |_____________|" <<setw(9)
+                             <<(i*9/5) + 32 << endl;
+                    }
+                    faranheit = (celciusH*9/5) + 32;
+                    cout << setw(7)<<fixed<<setprecision(2)
+                         << celciusH << "  _____________ ";
+                    cout << setw(9)<<fixed<<setprecision(2)<<faranheit
+                         << endl<<endl;
+                    break;
                 }
             }
             else if (cf == "f" || cf =="F")
