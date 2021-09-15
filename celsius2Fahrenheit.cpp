@@ -1,3 +1,9 @@
+/****************************
+*  Program name: celcius2faranheit.cpp
+*  Author: ...
+*  Date last updated: 09/12/2021
+* Purpose: converts the temperature from either celcius or faranheit
+****************************/
 #include <iostream>
 #include <ctype.h>
 #include <stdlib.h>
