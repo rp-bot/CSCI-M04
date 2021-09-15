@@ -13,7 +13,7 @@ int main()
     bool trigger = true;
     while (cf == "_")
     {
-        cout << "celcius or faranheit [C/F]: ";
+        cout << "celcius or faranheit [C/F] or [X] to quit: ";
         cin >> cf;
 
         while (trigger == true)
@@ -100,7 +100,7 @@ int main()
                     cout << "\nfaranheit  _____________ celcius\n";
                     CELCIUS = (faranheitL-32) * 5/9;
                     cout << endl<<setw(9)<<fixed<<setprecision(2)
-                         << faranheitL << "_____________ ";
+                         << faranheitL << "  _____________ ";
                     cout << setw(7)<<fixed<<setprecision(2)<<CELCIUS
                          << endl;
 
@@ -120,12 +120,23 @@ int main()
                     continue;
                 }
             }
-            else if (cf != "_")
+            else if (cf == "_")
+            {
+                break;
+            }
+            else if (cf == "x" || cf =="X")
+            {
+                trigger = false;
+                cf = ".";
+                cout << "\nthank you, bye!";
+                return 0;
+                break;
+            }
+            else
             {
                 cout << "invalid input, try again";
                 break;
             }
         }
     }
-
 }
