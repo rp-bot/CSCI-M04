@@ -13,8 +13,8 @@ using namespace std;
 
 int main()
 {
-    float celciusL=0,celciusH=0, faranheitL=0,faranheitH=0, temp=0;
-    float FARANHEIT,CELCIUS;
+    float celciusL = 0, celciusH = 0, faranheitL = 0, faranheitH = 0, temp = 0;
+    float FARANHEIT, CELCIUS;
     string cf = "_";
     bool trigger = true;
     while (cf == "_")
@@ -47,35 +47,37 @@ int main()
                     if ((celciusH - celciusL) > 20)
                     {
                         cout << "\nThe LOW to HIGH temp range was too wide\n"
-                             <<"\nTry again, range can only be within 20 deg\n";
+                             << "\nTry again, range can only be within 20deg\n";
                         cf = "c";
                         continue;
                     }
                     cout << "\n________________________________";
                     cout << "\ncelcius  _____________ faranheit\n";
-                    FARANHEIT = (celciusL*9/5) + 32;
-                    cout << endl<<setw(7)<<fixed<<setprecision(2)
+                    FARANHEIT = (celciusL * 9 / 5) + 32;
+                    cout << endl
+                         << setw(7) << fixed << setprecision(2)
                          << celciusL << "  _____________ ";
-                    cout << setw(9)<<fixed<<setprecision(2)<<FARANHEIT
+                    cout << setw(9) << fixed << setprecision(2) << FARANHEIT
                          << endl;
 
-                    for (float i = floor(celciusL)+1; i < celciusH; i++)
+                    for (float i = floor(celciusL) + 1; i < celciusH; i++)
                     {
-                        cout << setw(7)<<fixed<<setprecision(2)
-                             << i<<" |_____________|" <<setw(9)
-                             <<(i*9/5) + 32 << endl;
+                        cout << setw(7) << fixed << setprecision(2)
+                             << i << " |_____________|" << setw(9)
+                             << (i * 9 / 5) + 32 << endl;
                     }
-                    FARANHEIT = (celciusH*9/5) + 32;
-                    cout << setw(7)<<fixed<<setprecision(2)
+                    FARANHEIT = (celciusH * 9 / 5) + 32;
+                    cout << setw(7) << fixed << setprecision(2)
                          << celciusH << "  _____________ ";
-                    cout << setw(9)<<fixed<<setprecision(2)<<FARANHEIT
-                         << endl<<endl;
+                    cout << setw(9) << fixed << setprecision(2) << FARANHEIT
+                         << endl
+                         << endl;
                     // break;
                     cf = "_";
                     continue;
                 }
             }
-            else if (cf == "f" || cf =="F")
+            else if (cf == "f" || cf == "F")
             {
                 cout << "\nenter the lowest temp and the highest temp\n";
                 cout << "faranheit [low]: ";
@@ -98,29 +100,32 @@ int main()
                     if ((faranheitH - faranheitL) > 35)
                     {
                         cout << "\nThe LOW to HIGH temp range was too wide\n"
-                             <<"\nTry again, range can only be within 35 deg\n";
+                             << "\nTry again, range can only be within 35 deg\n";
                         cf = "f";
                         continue;
                     }
                     cout << "\n________________________________";
                     cout << "\nfaranheit  _____________ celcius\n";
-                    CELCIUS = (faranheitL-32) * 5/9;
-                    cout << endl<<setw(9)<<fixed<<setprecision(2)
+                    CELCIUS = (faranheitL - 32) * 5 / 9;
+                    cout << endl
+                         << setw(9) << fixed << setprecision(2)
                          << faranheitL << "  _____________ ";
-                    cout << setw(7)<<fixed<<setprecision(2)<<CELCIUS
+                    cout << setw(7) << fixed << setprecision(2) << CELCIUS
                          << endl;
 
-                    for (float i = floor(faranheitL)+1; i < faranheitH; i+=2)
+                    for (float i = floor(faranheitL) + 1; i < faranheitH;
+                         i += 2)
                     {
-                        cout << setw(9)<<fixed<<setprecision(2)
-                             << i<<" |_____________|" <<setw(7)
-                             <<(i-32) * 5/9 << endl;
+                        cout << setw(9) << fixed << setprecision(2)
+                             << i << " |_____________|" << setw(7)
+                             << (i - 32) * 5 / 9 << endl;
                     }
-                    CELCIUS = (faranheitH-32) * 5/9;
-                    cout << setw(9)<<fixed<<setprecision(2)
+                    CELCIUS = (faranheitH - 32) * 5 / 9;
+                    cout << setw(9) << fixed << setprecision(2)
                          << faranheitH << "  _____________ ";
-                    cout << setw(7)<<fixed<<setprecision(2)<<CELCIUS
-                         << endl<<endl;
+                    cout << setw(7) << fixed << setprecision(2) << CELCIUS
+                         << endl
+                         << endl;
                     // break;
                     cf = "_";
                     continue;
@@ -130,7 +135,7 @@ int main()
             {
                 break;
             }
-            else if (cf == "x" || cf =="X")
+            else if (cf == "x" || cf == "X")
             {
                 trigger = false;
                 cf = ".";
