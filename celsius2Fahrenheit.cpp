@@ -140,6 +140,8 @@ int main()
                 trigger = false;
                 cf = ".";
                 cout << "\nthank you, bye!";
+                cout << endl
+                     << endl;
                 return 0;
                 break;
             }
